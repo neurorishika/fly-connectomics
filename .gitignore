@@ -158,6 +158,7 @@ temp/
 **/*.key
 # data folders anywhere in the project directory and subfolders
 **/data/*/
+**/data/*
 # unprotected zip files anywhere in the project directory and subfolders
 **/*.zip
 # directorypaths

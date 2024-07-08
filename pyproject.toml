@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "rpytemplate"
+name = "flyconnectomics"
 version = "0.1.0"
 description = ""
 authors = ["Rishika Mohanta <neurorishika@gmail.com>"]
@@ -19,9 +19,13 @@ mkinit = "^1.0.0"
 cryptography = "^41.0.2"
 lazy-loader = "^0.3"
 split-file-reader = "^0.1.4"
-statannotations = "^0.5.0"
 joblib = "^1.3.1"
 tqdm = "^4.65.0"
+caveclient = "^5.21.1"
+neuprint-python = "^0.4.26"
+seaborn = "^0.13.2"
+plotly = "^5.22.0"
+bokeh = "^3.4.2"
 
 [build-system]
 requires = ["poetry-core"]
