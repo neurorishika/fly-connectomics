@@ -26,6 +26,8 @@ neuprint-python = "^0.4.26"
 seaborn = "^0.13.2"
 plotly = "^5.22.0"
 bokeh = "^3.4.2"
+ipykernel = "^6.29.5"
+pyqt5 = "^5.15.11"
 
 [build-system]
 requires = ["poetry-core"]
