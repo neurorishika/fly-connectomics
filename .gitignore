@@ -166,3 +166,8 @@ directory.path
 
 # Mac OS
 **/.DS_Store
+
+**/*.npy
+**/*.pkl
+**/*.pdf
+**/*.csv

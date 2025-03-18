@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioRxiv Summary Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .tag {
+            display: inline-block;
+            background-color: #f1f1f1;
+            border-radius: 15px;
+            padding: 5px 10px;
+            margin: 2px;
+            font-size: 14px;
+        }
+        .tag .remove-tag {
+            margin-left: 8px;
+            cursor: pointer;
+        }
+        .tag-input {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+        }
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 5px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body class="container mt-5">
+    <h1 class="mb-4">BioRxiv Summary Generator</h1>
+
+    <form method="POST" id="summaryForm" class="mb-3">
+        <!-- Keywords Input with Tagging -->
+        <div class="mb-3">
+            <label for="keywords" class="form-label">Keywords:</label>
+            <div class="tags-container" id="keywords-container">
+                <input type="text" id="keywords-input" class="tag-input" placeholder="Type and press Enter">
+            </div>
+        </div>
+
+        <!-- Negative Keywords Input with Tagging -->
+        <div class="mb-3">
+            <label for="negative_keywords" class="form-label">Negative Keywords:</label>
+            <div class="tags-container" id="negative-keywords-container">
+                <input type="text" id="negative-keywords-input" class="tag-input" placeholder="Type and press Enter">
+            </div>
+        </div>
+
+        <!-- Multi-Column Categories Selection -->
+        <div class="mb-3">
+            <label class="form-label">Categories:</label>
+            <div class="row">
+                {% set category_list = [
+                    'Animal Behavior and Cognition', 'Biochemistry', 'Bioengineering', 'Bioinformatics', 'Biophysics',
+                    'Cancer Biology', 'Cell Biology', 'Clinical Trials', 'Developmental Biology', 'Ecology',
+                    'Epidemiology', 'Evolutionary Biology', 'Genetics', 'Genomics', 'Immunology', 'Microbiology',
+                    'Molecular Biology', 'Neuroscience', 'Paleontology', 'Pathology', 'Pharmacology and Toxicology',
+                    'Physiology', 'Plant Biology', 'Scientific Communication and Education', 'Synthetic Biology',
+                    'Systems Biology', 'Zoology'
+                ] %}
+                {% for category in category_list %}
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="categories" value="{{ category }}" id="{{ category }}" {% if category in categories %}checked{% endif %}>
+                            <label class="form-check-label" for="{{ category }}">{{ category }}</label>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Period Input -->
+        <div class="mb-3">
+            <label for="period_days" class="form-label">Period (in days, max 365):</label>
+            <input type="number" id="period_days" name="period_days" value="{{ period_days }}" min="1" max="365" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Generate Summaries</button>
+    </form>
+    <form method="POST" action="/clear" class="mb-5">
+        <button type="submit" class="btn btn-secondary">Clear Inputs</button>
+    </form>
+
+    <div class="progress mb-3">
+        <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <div id="progress-info" class="mb-3"></div>
+    <div id="summaries"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchVoteStatus();
+        });
+
+        // Function to initialize tags from an array of preloaded values
+        function initTagging(containerId, inputId, preloadedTags) {
+            const container = document.getElementById(containerId);
+            const input = document.getElementById(inputId);
+
+            // Add each preloaded tag as a separate span element
+            preloadedTags.forEach(tagText => {
+                if (tagText.trim() !== "") {
+                    const tag = document.createElement('span');
+                    tag.className = 'tag';
+                    tag.innerHTML = `${tagText} <span class="remove-tag">&times;</span>`;
+                    tag.querySelector('.remove-tag').addEventListener('click', () => tag.remove());
+                    container.insertBefore(tag, input);
+                }
+            });
+
+            // Function to add new tags on Enter keypress
+            input.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter' && input.value.trim()) {
+                    const tagText = input.value.trim();
+                    const tag = document.createElement('span');
+                    tag.className = 'tag';
+                    tag.innerHTML = `${tagText} <span class="remove-tag">&times;</span>`;
+                    tag.querySelector('.remove-tag').addEventListener('click', () => tag.remove());
+                    container.insertBefore(tag, input);
+                    input.value = '';
+                    event.preventDefault();
+                }
+            });
+        }
+
+        // Initialize keywords and negative keywords from the data passed by Flask
+        const keywords = JSON.parse('{{ keywords | tojson | safe }}');
+        const negativeKeywords = JSON.parse('{{ negative_keywords | tojson | safe }}');
+        
+        initTagging('keywords-container', 'keywords-input', keywords);
+        initTagging('negative-keywords-container', 'negative-keywords-input', negativeKeywords);
+    </script>
+
+    <script>
+        function updateVoteButtons(voteStatus) {
+            document.querySelectorAll('.vote-buttons').forEach(buttonGroup => {
+                const doi = buttonGroup.dataset.doi;
+                const currentVote = voteStatus[doi];
+
+                const upvoteButton = buttonGroup.querySelector('.upvote');
+                const downvoteButton = buttonGroup.querySelector('.downvote');
+
+                // Reset button states
+                upvoteButton.classList.remove('btn-success', 'active');
+                downvoteButton.classList.remove('btn-danger', 'active');
+
+                // Highlight the current vote
+                if (currentVote === 'upvote') {
+                    upvoteButton.classList.add('btn-success', 'active');
+                } else if (currentVote === 'downvote') {
+                    downvoteButton.classList.add('btn-danger', 'active');
+                }
+            });
+        }
+
+        function fetchVoteStatus() {
+            fetch('/vote_status')
+                .then(response => response.json())
+                .then(voteStatus => updateVoteButtons(voteStatus))
+                .catch(err => console.error("Error fetching vote status:", err));
+        }
+
+        function submitVote(doi, voteType) {
+            fetch(`/vote?doi=${doi}&type=${voteType}`, {
+                method: 'POST'
+            }).then(response => {
+                if (response.ok) {
+                    fetchVoteStatus(); // Update buttons after a successful vote
+                } else {
+                    console.error("Vote failed to register.");
+                }
+            });
+        }
+    </script>
+
+    <script>
+        // Form submission with real-time progress updates
+        $("#summaryForm").on("submit", function(event) {
+            event.preventDefault();
+            $("#summaries").html(""); // Clear existing summaries
+            $("#progress-bar").css("width", "0%").attr("aria-valuenow", 0);
+            $("#progress-info").text("Starting the data fetching process...");
+
+            const params = new URLSearchParams();
+
+            // Collect tags for keywords
+            $("#keywords-container .tag").each(function() {
+                params.append('keywords', $(this).text().replace(' ×', ''));
+            });
+
+            // Collect tags for negative keywords
+            $("#negative-keywords-container .tag").each(function() {
+                params.append('negative_keywords', $(this).text().replace(' ×', ''));
+            });
+
+            // Collect form data
+            $("#summaryForm").serializeArray().forEach(field => {
+                params.append(field.name, field.value);
+            });
+
+            const eventSource = new EventSource(`/generate_summaries?${params.toString()}`);
+
+            eventSource.onmessage = function(e) {
+                try {
+                    const data = JSON.parse(e.data);
+
+                    if (data.progress) {
+                        $("#progress-info").text(data.message || `Progress: ${data.progress}%`);
+                        $("#progress-bar").css("width", `${data.progress}%`).attr("aria-valuenow", data.progress);
+                    }
+                    if (data.title) {
+                        // Generate vote buttons
+                        const voteButtons = `
+                            <div class="vote-buttons" data-doi="${data.url.split('/').pop()}">
+                                <button class="btn btn-secondary upvote" onclick="submitVote('${data.url.split('/').pop()}', 'upvote')">👍</button>
+                                <button class="btn btn-secondary downvote" onclick="submitVote('${data.url.split('/').pop()}', 'downvote')">👎</button>
+                            </div>
+                        `;
+
+                        const summaryHtml = `
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">${data.title}</h5>
+                                    <p class="card-text"><strong>Authors:</strong> ${data.authors}</p>
+                                    <p class="card-text"><strong>URL:</strong> <a href="${data.url}" target="_blank">${data.url}</a></p>
+                                    <p class="card-text"><strong>Similarity Score:</strong> ${data.similarity_score}</p>
+                                    <p class="card-text"><strong>Summary:</strong> ${data.summary}</p>
+                                    <div class="mt-2">${voteButtons}</div>
+                                </div>
+                            </div>`;
+                        $("#summaries").append(summaryHtml);
+                    }
+                } catch (err) {
+                    console.error("Error processing data:", err);
+                }
+            };
+
+            eventSource.onerror = function() {
+                console.error("EventSource error occurred.");
+                eventSource.close(); // Always close the stream on error
+
+                // Check if all summaries were processed successfully
+                const progress = parseInt($("#progress-bar").attr("aria-valuenow"));
+                if (progress === 100) {
+                    $("#progress-info").text("All summaries processed successfully!");
+                } else {
+                    $("#progress-info").text("An error occurred while fetching summaries. Please try again.");
+                }
+            };
+
+        });
+    </script>
+</body>
+</html>

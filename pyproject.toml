@@ -24,10 +24,12 @@ tqdm = "^4.65.0"
 caveclient = "^5.21.1"
 neuprint-python = "^0.4.26"
 seaborn = "^0.13.2"
-plotly = "^5.22.0"
 bokeh = "^3.4.2"
 ipykernel = "^6.29.5"
-pyqt5 = "^5.15.11"
+navis = "^1.9.1"
+python-louvain = "^0.16"
+node2vec = "^0.5.0"
+umap-learn = "^0.5.7"
 
 [build-system]
 requires = ["poetry-core"]
