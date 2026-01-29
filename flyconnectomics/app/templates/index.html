@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioRxiv Research Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+        .tag { display: inline-flex; align-items: center; background-color: #0d6efd; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; margin: 0.1rem; }
+        .tag.negative { background-color: #dc3545; }
+        .tag button { background: none; border: none; color: white; margin-left: 0.5rem; font-weight: bold; }
+        #results-container .card { margin-bottom: 1.5rem; }
+        .progress-bar { transition: width 0.4s ease-in-out; }
+        .vote-btn { cursor: pointer; opacity: 0.5; }
+        .vote-btn.active { opacity: 1; }
+        .upvote.active { color: #198754; }
+        .downvote.active { color: #dc3545; }
+        .score-badge { font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>BioRxiv Research Assistant 🔬</h1>
+            <form action="/clear" method="POST" id="clearForm">
+                <button type="submit" class="btn btn-secondary">Clear Settings</button>
+            </form>
+        </div>
+
+        <div class="card bg-body-tertiary mb-4">
+            <div class="card-body">
+                <form id="queryForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="keywords" class="form-label"><strong>Keywords (Ranked by Importance)</strong></label>
+                            <input type="text" id="keywords" class="form-control" placeholder="e.g., crispr, then press Enter">
+                            <div id="keywords-container" class="mt-2"></div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="negative-keywords" class="form-label"><strong>Negative Keywords</strong></label>
+                            <input type="text" id="negative-keywords" class="form-control" placeholder="e.g., review, then press Enter">
+                            <div id="negative-keywords-container" class="mt-2"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="categories" class="form-label"><strong>Categories (e.g., neuroscience, genomics)</strong></label>
+                             <input type="text" id="categories" class="form-control" placeholder="e.g., immunology, then press Enter">
+                            <div id="categories-container" class="mt-2"></div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="period_days" class="form-label"><strong>Time Period (Days)</strong></label>
+                            <input type="number" id="period_days" class="form-control" value="{{ period_days }}" min="1" max="365">
+                        </div>
+                    </div>
+
+                    <button type="submit" id="generateBtn" class="btn btn-primary w-100">Generate Summaries</button>
+                </form>
+            </div>
+        </div>
+        
+        <div id="progress-container" class="mb-4" style="display:none;">
+            <div class="progress">
+                <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p id="progressText" class="text-center mt-2"></p>
+        </div>
+
+        <div id="results-container"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const queryForm = document.getElementById('queryForm');
+            const generateBtn = document.getElementById('generateBtn');
+            const progressContainer = document.getElementById('progress-container');
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            const resultsContainer = document.getElementById('results-container');
+            let eventSource;
+
+            // --- Tag Input Management ---
+            function setupTagInput(inputId, containerId, inputName, initialTags, isNegative = false) {
+                const input = document.getElementById(inputId);
+                const container = document.getElementById(containerId);
+                let tags = [...initialTags];
+
+                const renderTags = () => {
+                    container.innerHTML = '';
+                    tags.forEach((tag, index) => {
+                        const tagEl = document.createElement('span');
+                        tagEl.className = isNegative ? 'tag negative' : 'tag';
+                        tagEl.innerHTML = `${tag} <button data-index="${index}">&times;</button>`;
+                        
+                        const hiddenInput = document.createElement('input');
+                        hiddenInput.type = 'hidden';
+                        hiddenInput.name = inputName;
+                        hiddenInput.value = tag;
+                        tagEl.appendChild(hiddenInput);
+                        
+                        container.appendChild(tagEl);
+                    });
+                };
+                
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' && input.value.trim() !== '') {
+                        e.preventDefault();
+                        tags.push(input.value.trim());
+                        input.value = '';
+                        renderTags();
+                    }
+                });
+
+                container.addEventListener('click', (e) => {
+                    if (e.target.tagName === 'BUTTON') {
+                        const index = e.target.getAttribute('data-index');
+                        tags.splice(index, 1);
+                        renderTags();
+                    }
+                });
+
+                renderTags();
+            }
+
+            setupTagInput('keywords', 'keywords-container', 'keywords', {{ keywords|tojson }});
+            setupTagInput('negative-keywords', 'negative-keywords-container', 'negative_keywords', {{ negative_keywords|tojson }}, true);
+            setupTagInput('categories', 'categories-container', 'categories', {{ categories|tojson }});
+
+            // --- Fetch Vote Status on Load ---
+            let voteStatus = {};
+            fetch('/vote_status').then(res => res.json()).then(data => {
+                voteStatus = data;
+            });
+
+            // --- Form Submission and SSE Handling ---
+            queryForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                if (eventSource) {
+                    eventSource.close();
+                }
+
+                const formData = new FormData(queryForm);
+                const params = new URLSearchParams(formData);
+
+                resultsContainer.innerHTML = '';
+                progressContainer.style.display = 'block';
+                progressBar.style.width = '0%';
+                progressBar.classList.add('progress-bar-animated');
+                progressText.textContent = 'Initializing...';
+                generateBtn.disabled = true;
+
+                eventSource = new EventSource(`/generate?${params.toString()}`);
+
+                eventSource.onmessage = (event) => {
+                    const data = JSON.parse(event.data);
+
+                    if (data.error) {
+                        progressText.textContent = `Error: ${data.error}`;
+                        progressBar.classList.add('bg-danger');
+                        eventSource.close();
+                        generateBtn.disabled = false;
+                        return;
+                    }
+
+                    if (data.message) {
+                        progressText.textContent = data.message;
+                    }
+
+                    if (data.progress !== undefined) {
+                        progressBar.style.width = `${data.progress}%`;
+                        progressBar.setAttribute('aria-valuenow', data.progress);
+                        if (data.progress === 100) {
+                            progressBar.classList.remove('progress-bar-animated');
+                            generateBtn.disabled = false;
+                        }
+                    }
+
+                    if (data.title) {
+                        // It's an article result
+                        const card = createArticleCard(data);
+                        resultsContainer.appendChild(card);
+                    }
+                };
+
+                eventSource.onerror = () => {
+                    progressText.textContent = 'Connection lost. Please try again.';
+                    progressBar.classList.add('bg-danger');
+                    eventSource.close();
+                    generateBtn.disabled = false;
+                };
+            });
+
+            function createArticleCard(article) {
+                const cardDiv = document.createElement('div');
+                cardDiv.className = 'card';
+                cardDiv.setAttribute('data-doi', article.doi);
+                
+                const currentVote = voteStatus[article.doi];
+                
+                cardDiv.innerHTML = `
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">${article.title}</h5>
+                        <span class="badge bg-primary score-badge">Score: ${article.similarity_score}</span>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">${article.authors}</h6>
+                        <p class="card-text"><strong>Summary:</strong> ${article.summary}</p>
+                        <p class="card-text"><small><strong>Insights:</strong> ${article.insight}</small></p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <a href="${article.url}" target="_blank" class="btn btn-sm btn-outline-info">Read on bioRxiv</a>
+                        <div>
+                            <span class="vote-btn upvote fs-4 ${currentVote === 'upvote' ? 'active' : ''}" data-type="upvote" title="Upvote">▲</span>
+                            <span class="vote-btn downvote fs-4 ${currentVote === 'downvote' ? 'active' : ''}" data-type="downvote" title="Downvote">▼</span>
+                        </div>
+                    </div>
+                `;
+                return cardDiv;
+            }
+
+            // --- Voting Logic ---
+            resultsContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('vote-btn')) {
+                    const btn = e.target;
+                    const card = btn.closest('.card');
+                    const doi = card.dataset.doi;
+                    const voteType = btn.dataset.type;
+
+                    fetch('/vote', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ doi: doi, type: voteType })
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            voteStatus[data.doi] = data.newState; // Update local state
+                            const upvoteBtn = card.querySelector('.upvote');
+                            const downvoteBtn = card.querySelector('.downvote');
+                            upvoteBtn.classList.toggle('active', data.newState === 'upvote');
+                            downvoteBtn.classList.toggle('active', data.newState === 'downvote');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

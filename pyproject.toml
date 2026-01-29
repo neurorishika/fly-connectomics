@@ -6,7 +6,7 @@ authors = ["Rishika Mohanta <neurorishika@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.13"
+python = ">=3.10,<3.13"
 numpy = "^1.25.1"
 pandas = "^2.0.3"
 matplotlib = "^3.7.2"
@@ -30,6 +30,12 @@ navis = "^1.9.1"
 python-louvain = "^0.16"
 node2vec = "^0.5.0"
 umap-learn = "^0.5.7"
+graphviz = "^0.21"
+dotenv = "^0.9.9"
+fuzzywuzzy = "^0.18.0"
+neuron = "^9.0.1"
+plotly = "^6.5.0"
+fafbseg = "^3.2.0"
 
 [build-system]
 requires = ["poetry-core"]
