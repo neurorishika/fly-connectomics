@@ -1,0 +1,1430 @@
+{
+  "D__AL_L": {
+    "glomerulus": "D",
+    "side": "L",
+    "centroid_nm": [
+      466666.9486791183,
+      205866.91233383812,
+      38971.69779572607
+    ],
+    "volume_um3": 5336.135,
+    "surface_um2": 1596.913,
+    "n_synapses": 6256,
+    "n_hull_verts": 146,
+    "n_hull_faces": 288
+  },
+  "D__AL_R": {
+    "glomerulus": "D",
+    "side": "R",
+    "centroid_nm": [
+      589182.370294319,
+      218223.26762491444,
+      24345.2977412731
+    ],
+    "volume_um3": 5762.735,
+    "surface_um2": 1696.433,
+    "n_synapses": 6152,
+    "n_hull_verts": 138,
+    "n_hull_faces": 272
+  },
+  "DA1__AL_L": {
+    "glomerulus": "DA1",
+    "side": "L",
+    "centroid_nm": [
+      431628.6373377472,
+      217325.41162122137,
+      40953.17710601969
+    ],
+    "volume_um3": 9684.899,
+    "surface_um2": 2252.37,
+    "n_synapses": 12084,
+    "n_hull_verts": 265,
+    "n_hull_faces": 526
+  },
+  "DA1__AL_R": {
+    "glomerulus": "DA1",
+    "side": "R",
+    "centroid_nm": [
+      618798.1680748614,
+      231815.46870173526,
+      21488.758063050787
+    ],
+    "volume_um3": 9691.738,
+    "surface_um2": 2292.453,
+    "n_synapses": 11587,
+    "n_hull_verts": 180,
+    "n_hull_faces": 356
+  },
+  "DA2__AL_L": {
+    "glomerulus": "DA2",
+    "side": "L",
+    "centroid_nm": [
+      471924.3159463487,
+      222331.02036761053,
+      26538.87729756582
+    ],
+    "volume_um3": 2415.905,
+    "surface_um2": 945.424,
+    "n_synapses": 2119,
+    "n_hull_verts": 93,
+    "n_hull_faces": 182
+  },
+  "DA2__AL_R": {
+    "glomerulus": "DA2",
+    "side": "R",
+    "centroid_nm": [
+      578745.7636544191,
+      230412.95200264812,
+      11724.104601125455
+    ],
+    "volume_um3": 2100.736,
+    "surface_um2": 833.74,
+    "n_synapses": 3180,
+    "n_hull_verts": 123,
+    "n_hull_faces": 242
+  },
+  "DA3__AL_L": {
+    "glomerulus": "DA3",
+    "side": "L",
+    "centroid_nm": [
+      448130.9723756906,
+      212209.37016574584,
+      32916.243093922654
+    ],
+    "volume_um3": 660.763,
+    "surface_um2": 392.444,
+    "n_synapses": 382,
+    "n_hull_verts": 48,
+    "n_hull_faces": 92
+  },
+  "DA3__AL_R": {
+    "glomerulus": "DA3",
+    "side": "R",
+    "centroid_nm": [
+      602737.689119171,
+      223424.32124352333,
+      16403.108808290155
+    ],
+    "volume_um3": 564.102,
+    "surface_um2": 349.345,
+    "n_synapses": 407,
+    "n_hull_verts": 45,
+    "n_hull_faces": 86
+  },
+  "DA4l__AL_L": {
+    "glomerulus": "DA4l",
+    "side": "L",
+    "centroid_nm": [
+      453945.1625,
+      225069.08125,
+      28168.604166666668
+    ],
+    "volume_um3": 2498.607,
+    "surface_um2": 991.295,
+    "n_synapses": 2021,
+    "n_hull_verts": 100,
+    "n_hull_faces": 196
+  },
+  "DA4l__AL_R": {
+    "glomerulus": "DA4l",
+    "side": "R",
+    "centroid_nm": [
+      596722.4495867769,
+      234095.07933884297,
+      10186.198347107438
+    ],
+    "volume_um3": 1776.65,
+    "surface_um2": 750.018,
+    "n_synapses": 2548,
+    "n_hull_verts": 102,
+    "n_hull_faces": 200
+  },
+  "DA4m__AL_L": {
+    "glomerulus": "DA4m",
+    "side": "L",
+    "centroid_nm": [
+      459557.16503496503,
+      215948.9090909091,
+      29249.51048951049
+    ],
+    "volume_um3": 3966.664,
+    "surface_um2": 1338.723,
+    "n_synapses": 3011,
+    "n_hull_verts": 72,
+    "n_hull_faces": 140
+  },
+  "DA4m__AL_R": {
+    "glomerulus": "DA4m",
+    "side": "R",
+    "centroid_nm": [
+      590049.2789794786,
+      225268.664448142,
+      11668.663338879645
+    ],
+    "volume_um3": 3334.331,
+    "surface_um2": 1156.293,
+    "n_synapses": 3796,
+    "n_hull_verts": 98,
+    "n_hull_faces": 192
+  },
+  "DC1__AL_L": {
+    "glomerulus": "DC1",
+    "side": "L",
+    "centroid_nm": [
+      472700.023868722,
+      218915.26553953256,
+      41680.33316757832
+    ],
+    "volume_um3": 5819.811,
+    "surface_um2": 1608.466,
+    "n_synapses": 8468,
+    "n_hull_verts": 174,
+    "n_hull_faces": 344
+  },
+  "DC1__AL_R": {
+    "glomerulus": "DC1",
+    "side": "R",
+    "centroid_nm": [
+      584829.7591230348,
+      231256.8838886485,
+      28564.984855041108
+    ],
+    "volume_um3": 6195.795,
+    "surface_um2": 1704.299,
+    "n_synapses": 7298,
+    "n_hull_verts": 137,
+    "n_hull_faces": 270
+  },
+  "DC2__AL_L": {
+    "glomerulus": "DC2",
+    "side": "L",
+    "centroid_nm": [
+      480057.0505865103,
+      230994.931085044,
+      35846.224340175955
+    ],
+    "volume_um3": 5194.054,
+    "surface_um2": 1586.162,
+    "n_synapses": 5744,
+    "n_hull_verts": 82,
+    "n_hull_faces": 160
+  },
+  "DC2__AL_R": {
+    "glomerulus": "DC2",
+    "side": "R",
+    "centroid_nm": [
+      573775.3219650832,
+      242807.00446609827,
+      22483.061307348762
+    ],
+    "volume_um3": 4302.932,
+    "surface_um2": 1383.725,
+    "n_synapses": 5186,
+    "n_hull_verts": 112,
+    "n_hull_faces": 220
+  },
+  "DC3__AL_L": {
+    "glomerulus": "DC3",
+    "side": "L",
+    "centroid_nm": [
+      449932.5605184796,
+      231855.42546855842,
+      41314.26169206516
+    ],
+    "volume_um3": 5134.093,
+    "surface_um2": 1498.659,
+    "n_synapses": 6010,
+    "n_hull_verts": 128,
+    "n_hull_faces": 252
+  },
+  "DC3__AL_R": {
+    "glomerulus": "DC3",
+    "side": "R",
+    "centroid_nm": [
+      600951.588296327,
+      243206.15231375804,
+      23949.848516289687
+    ],
+    "volume_um3": 5588.132,
+    "surface_um2": 1641.544,
+    "n_synapses": 5073,
+    "n_hull_verts": 86,
+    "n_hull_faces": 168
+  },
+  "DC4__AL_L": {
+    "glomerulus": "DC4",
+    "side": "L",
+    "centroid_nm": [
+      487610.5741811175,
+      225027.4619022596,
+      53856.84358031179
+    ],
+    "volume_um3": 5450.947,
+    "surface_um2": 1595.063,
+    "n_synapses": 6010,
+    "n_hull_verts": 96,
+    "n_hull_faces": 188
+  },
+  "DC4__AL_R": {
+    "glomerulus": "DC4",
+    "side": "R",
+    "centroid_nm": [
+      568954.62864494,
+      234011.51200686107,
+      37967.04974271012
+    ],
+    "volume_um3": 4300.326,
+    "surface_um2": 1347.237,
+    "n_synapses": 4910,
+    "n_hull_verts": 93,
+    "n_hull_faces": 182
+  },
+  "DL1__AL_L": {
+    "glomerulus": "DL1",
+    "side": "L",
+    "centroid_nm": [
+      452839.84224931576,
+      211240.7325205275,
+      56634.11793978602
+    ],
+    "volume_um3": 4102.727,
+    "surface_um2": 1283.65,
+    "n_synapses": 8462,
+    "n_hull_verts": 167,
+    "n_hull_faces": 330
+  },
+  "DL1__AL_R": {
+    "glomerulus": "DL1",
+    "side": "R",
+    "centroid_nm": [
+      604663.4997325345,
+      220334.14443136836,
+      43068.599550657964
+    ],
+    "volume_um3": 4888.671,
+    "surface_um2": 1431.542,
+    "n_synapses": 9839,
+    "n_hull_verts": 207,
+    "n_hull_faces": 410
+  },
+  "DL2d__AL_L": {
+    "glomerulus": "DL2d",
+    "side": "L",
+    "centroid_nm": [
+      436810.7722772277,
+      222098.46608541452,
+      64671.76001182208
+    ],
+    "volume_um3": 5008.489,
+    "surface_um2": 1532.37,
+    "n_synapses": 7124,
+    "n_hull_verts": 139,
+    "n_hull_faces": 274
+  },
+  "DL2d__AL_R": {
+    "glomerulus": "DL2d",
+    "side": "R",
+    "centroid_nm": [
+      619786.775689395,
+      235349.43119769514,
+      46890.22911236109
+    ],
+    "volume_um3": 5168.278,
+    "surface_um2": 1562.624,
+    "n_synapses": 7673,
+    "n_hull_verts": 136,
+    "n_hull_faces": 268
+  },
+  "DL2v__AL_L": {
+    "glomerulus": "DL2v",
+    "side": "L",
+    "centroid_nm": [
+      447439.283737646,
+      227967.37897574125,
+      63067.69451931716
+    ],
+    "volume_um3": 5745.462,
+    "surface_um2": 1760.97,
+    "n_synapses": 11716,
+    "n_hull_verts": 120,
+    "n_hull_faces": 236
+  },
+  "DL2v__AL_R": {
+    "glomerulus": "DL2v",
+    "side": "R",
+    "centroid_nm": [
+      608299.8118518519,
+      238800.2362962963,
+      47713.1037037037
+    ],
+    "volume_um3": 6364.929,
+    "surface_um2": 1831.377,
+    "n_synapses": 11369,
+    "n_hull_verts": 134,
+    "n_hull_faces": 264
+  },
+  "DL3__AL_L": {
+    "glomerulus": "DL3",
+    "side": "L",
+    "centroid_nm": [
+      442435.5257082896,
+      201978.2906610703,
+      44249.28646379853
+    ],
+    "volume_um3": 2379.328,
+    "surface_um2": 909.026,
+    "n_synapses": 4013,
+    "n_hull_verts": 142,
+    "n_hull_faces": 280
+  },
+  "DL3__AL_R": {
+    "glomerulus": "DL3",
+    "side": "R",
+    "centroid_nm": [
+      612829.5017136831,
+      217326.27998945425,
+      26862.251515950436
+    ],
+    "volume_um3": 2210.921,
+    "surface_um2": 884.252,
+    "n_synapses": 3993,
+    "n_hull_verts": 126,
+    "n_hull_faces": 248
+  },
+  "DL4__AL_L": {
+    "glomerulus": "DL4",
+    "side": "L",
+    "centroid_nm": [
+      452442.7259902333,
+      204401.88171459577,
+      42468.43190450353
+    ],
+    "volume_um3": 1324.685,
+    "surface_um2": 616.511,
+    "n_synapses": 1940,
+    "n_hull_verts": 111,
+    "n_hull_faces": 218
+  },
+  "DL4__AL_R": {
+    "glomerulus": "DL4",
+    "side": "R",
+    "centroid_nm": [
+      603835.8655293527,
+      218180.13447064726,
+      31222.237832413448
+    ],
+    "volume_um3": 1490.201,
+    "surface_um2": 750.556,
+    "n_synapses": 2098,
+    "n_hull_verts": 80,
+    "n_hull_faces": 156
+  },
+  "DL5__AL_L": {
+    "glomerulus": "DL5",
+    "side": "L",
+    "centroid_nm": [
+      473873.08514463145,
+      208786.55793430298,
+      56213.152475894756
+    ],
+    "volume_um3": 4287.808,
+    "surface_um2": 1387.695,
+    "n_synapses": 6441,
+    "n_hull_verts": 127,
+    "n_hull_faces": 250
+  },
+  "DL5__AL_R": {
+    "glomerulus": "DL5",
+    "side": "R",
+    "centroid_nm": [
+      585516.048653345,
+      217757.64448305822,
+      41975.62467419635
+    ],
+    "volume_um3": 3742.484,
+    "surface_um2": 1221.6,
+    "n_synapses": 6058,
+    "n_hull_verts": 160,
+    "n_hull_faces": 316
+  },
+  "DM1__AL_L": {
+    "glomerulus": "DM1",
+    "side": "L",
+    "centroid_nm": [
+      505424.5810055866,
+      217224.41557575253,
+      56004.61269073626
+    ],
+    "volume_um3": 9238.6,
+    "surface_um2": 2208.007,
+    "n_synapses": 12625,
+    "n_hull_verts": 183,
+    "n_hull_faces": 362
+  },
+  "DM1__AL_R": {
+    "glomerulus": "DM1",
+    "side": "R",
+    "centroid_nm": [
+      547782.6772569639,
+      225845.63821456538,
+      43776.07338628482
+    ],
+    "volume_um3": 8196.82,
+    "surface_um2": 2027.283,
+    "n_synapses": 9410,
+    "n_hull_verts": 184,
+    "n_hull_faces": 364
+  },
+  "DM2__AL_L": {
+    "glomerulus": "DM2",
+    "side": "L",
+    "centroid_nm": [
+      510916.5851375073,
+      228461.29104739614,
+      45045.06963136337
+    ],
+    "volume_um3": 5707.665,
+    "surface_um2": 1664.19,
+    "n_synapses": 8995,
+    "n_hull_verts": 132,
+    "n_hull_faces": 260
+  },
+  "DM2__AL_R": {
+    "glomerulus": "DM2",
+    "side": "R",
+    "centroid_nm": [
+      548951.399520096,
+      234479.82543491301,
+      29403.86922615477
+    ],
+    "volume_um3": 5926.497,
+    "surface_um2": 1716.434,
+    "n_synapses": 7019,
+    "n_hull_verts": 106,
+    "n_hull_faces": 208
+  },
+  "DM3__AL_L": {
+    "glomerulus": "DM3",
+    "side": "L",
+    "centroid_nm": [
+      490895.0449973531,
+      208101.19851773424,
+      47339.47061937533
+    ],
+    "volume_um3": 2254.348,
+    "surface_um2": 874.768,
+    "n_synapses": 3977,
+    "n_hull_verts": 145,
+    "n_hull_faces": 286
+  },
+  "DM3__AL_R": {
+    "glomerulus": "DM3",
+    "side": "R",
+    "centroid_nm": [
+      565327.1471934473,
+      215191.9797639123,
+      37544.794025536015
+    ],
+    "volume_um3": 2450.772,
+    "surface_um2": 927.963,
+    "n_synapses": 4370,
+    "n_hull_verts": 146,
+    "n_hull_faces": 288
+  },
+  "DM4__AL_L": {
+    "glomerulus": "DM4",
+    "side": "L",
+    "centroid_nm": [
+      509267.56417594064,
+      227514.56322204557,
+      72779.19660837308
+    ],
+    "volume_um3": 6263.411,
+    "surface_um2": 1746.977,
+    "n_synapses": 9932,
+    "n_hull_verts": 133,
+    "n_hull_faces": 262
+  },
+  "DM4__AL_R": {
+    "glomerulus": "DM4",
+    "side": "R",
+    "centroid_nm": [
+      544940.1497192763,
+      233828.1736743606,
+      59504.5739238927
+    ],
+    "volume_um3": 5545.841,
+    "surface_um2": 1648.571,
+    "n_synapses": 8437,
+    "n_hull_verts": 148,
+    "n_hull_faces": 292
+  },
+  "DM5__AL_L": {
+    "glomerulus": "DM5",
+    "side": "L",
+    "centroid_nm": [
+      500836.6462242563,
+      230475.58077803205,
+      31610.013729977116
+    ],
+    "volume_um3": 1611.096,
+    "surface_um2": 762.809,
+    "n_synapses": 2300,
+    "n_hull_verts": 98,
+    "n_hull_faces": 192
+  },
+  "DM5__AL_R": {
+    "glomerulus": "DM5",
+    "side": "R",
+    "centroid_nm": [
+      553958.8342165026,
+      240845.68054504163,
+      16798.001514004543
+    ],
+    "volume_um3": 1022.209,
+    "surface_um2": 550.664,
+    "n_synapses": 1391,
+    "n_hull_verts": 79,
+    "n_hull_faces": 154
+  },
+  "DM6__AL_L": {
+    "glomerulus": "DM6",
+    "side": "L",
+    "centroid_nm": [
+      493593.72636262514,
+      216261.1167964405,
+      33698.26028921024
+    ],
+    "volume_um3": 3157.776,
+    "surface_um2": 1096.168,
+    "n_synapses": 4732,
+    "n_hull_verts": 137,
+    "n_hull_faces": 270
+  },
+  "DM6__AL_R": {
+    "glomerulus": "DM6",
+    "side": "R",
+    "centroid_nm": [
+      562904.7522646711,
+      224524.6356833399,
+      21401.173690429303
+    ],
+    "volume_um3": 3722.956,
+    "surface_um2": 1232.636,
+    "n_synapses": 5346,
+    "n_hull_verts": 125,
+    "n_hull_faces": 246
+  },
+  "DP1l__AL_L": {
+    "glomerulus": "DP1l",
+    "side": "L",
+    "centroid_nm": [
+      445595.9155210201,
+      232124.54313608288,
+      73667.91392707711
+    ],
+    "volume_um3": 8956.902,
+    "surface_um2": 2317.397,
+    "n_synapses": 10567,
+    "n_hull_verts": 144,
+    "n_hull_faces": 284
+  },
+  "DP1l__AL_R": {
+    "glomerulus": "DP1l",
+    "side": "R",
+    "centroid_nm": [
+      611376.8968951998,
+      243787.9783829607,
+      59220.39631238741
+    ],
+    "volume_um3": 7716.555,
+    "surface_um2": 2060.034,
+    "n_synapses": 9934,
+    "n_hull_verts": 170,
+    "n_hull_faces": 336
+  },
+  "DP1m__AL_L": {
+    "glomerulus": "DP1m",
+    "side": "L",
+    "centroid_nm": [
+      484589.57953927084,
+      220798.25188947338,
+      70165.62790978898
+    ],
+    "volume_um3": 14199.032,
+    "surface_um2": 3187.593,
+    "n_synapses": 17410,
+    "n_hull_verts": 154,
+    "n_hull_faces": 304
+  },
+  "DP1m__AL_R": {
+    "glomerulus": "DP1m",
+    "side": "R",
+    "centroid_nm": [
+      572995.2203408899,
+      227797.59216965744,
+      54953.48146481409
+    ],
+    "volume_um3": 14904.695,
+    "surface_um2": 3354.776,
+    "n_synapses": 18713,
+    "n_hull_verts": 128,
+    "n_hull_faces": 252
+  },
+  "V__AL_L": {
+    "glomerulus": "V",
+    "side": "L",
+    "centroid_nm": [
+      462278.4097767802,
+      277809.47200399055,
+      71450.54994388328
+    ],
+    "volume_um3": 5730.15,
+    "surface_um2": 1676.012,
+    "n_synapses": 8442,
+    "n_hull_verts": 187,
+    "n_hull_faces": 370
+  },
+  "V__AL_R": {
+    "glomerulus": "V",
+    "side": "R",
+    "centroid_nm": [
+      586821.9385665529,
+      289167.32559726964,
+      60329.03754266212
+    ],
+    "volume_um3": 6325.543,
+    "surface_um2": 1843.883,
+    "n_synapses": 6169,
+    "n_hull_verts": 139,
+    "n_hull_faces": 274
+  },
+  "VA1d__AL_L": {
+    "glomerulus": "VA1d",
+    "side": "L",
+    "centroid_nm": [
+      435166.11239414936,
+      235042.38645111624,
+      34034.28278162689
+    ],
+    "volume_um3": 6409.096,
+    "surface_um2": 1780.869,
+    "n_synapses": 4103,
+    "n_hull_verts": 123,
+    "n_hull_faces": 242
+  },
+  "VA1d__AL_R": {
+    "glomerulus": "VA1d",
+    "side": "R",
+    "centroid_nm": [
+      611384.2625708539,
+      247814.6915341013,
+      14637.023221795574
+    ],
+    "volume_um3": 6398.415,
+    "surface_um2": 1794.092,
+    "n_synapses": 5757,
+    "n_hull_verts": 135,
+    "n_hull_faces": 266
+  },
+  "VA1v__AL_L": {
+    "glomerulus": "VA1v",
+    "side": "L",
+    "centroid_nm": [
+      438800.7780017276,
+      249785.3895767348,
+      38976.003455226026
+    ],
+    "volume_um3": 12667.759,
+    "surface_um2": 2795.366,
+    "n_synapses": 7312,
+    "n_hull_verts": 152,
+    "n_hull_faces": 300
+  },
+  "VA1v__AL_R": {
+    "glomerulus": "VA1v",
+    "side": "R",
+    "centroid_nm": [
+      610064.2629776743,
+      261960.9461717573,
+      22403.04615806054
+    ],
+    "volume_um3": 17600.358,
+    "surface_um2": 3615.079,
+    "n_synapses": 7686,
+    "n_hull_verts": 95,
+    "n_hull_faces": 186
+  },
+  "VA2__AL_L": {
+    "glomerulus": "VA2",
+    "side": "L",
+    "centroid_nm": [
+      486828.9367681499,
+      263398.19975203194,
+      34209.329108692655
+    ],
+    "volume_um3": 5799.785,
+    "surface_um2": 1620.533,
+    "n_synapses": 7642,
+    "n_hull_verts": 189,
+    "n_hull_faces": 374
+  },
+  "VA2__AL_R": {
+    "glomerulus": "VA2",
+    "side": "R",
+    "centroid_nm": [
+      568447.4722173223,
+      269926.7031222438,
+      16765.553007585113
+    ],
+    "volume_um3": 5899.408,
+    "surface_um2": 1657.748,
+    "n_synapses": 5968,
+    "n_hull_verts": 134,
+    "n_hull_faces": 264
+  },
+  "VA3__AL_L": {
+    "glomerulus": "VA3",
+    "side": "L",
+    "centroid_nm": [
+      466943.0078157137,
+      267941.6955985191,
+      36377.37556561086
+    ],
+    "volume_um3": 4137.351,
+    "surface_um2": 1367.771,
+    "n_synapses": 5118,
+    "n_hull_verts": 123,
+    "n_hull_faces": 242
+  },
+  "VA3__AL_R": {
+    "glomerulus": "VA3",
+    "side": "R",
+    "centroid_nm": [
+      588781.6493670886,
+      281430.9911392405,
+      23411.810126582277
+    ],
+    "volume_um3": 4527.633,
+    "surface_um2": 1483.585,
+    "n_synapses": 3327,
+    "n_hull_verts": 116,
+    "n_hull_faces": 228
+  },
+  "VA4__AL_L": {
+    "glomerulus": "VA4",
+    "side": "L",
+    "centroid_nm": [
+      464580.0144702842,
+      267996.31627906975,
+      49372.330749354005
+    ],
+    "volume_um3": 2772.265,
+    "surface_um2": 995.98,
+    "n_synapses": 4074,
+    "n_hull_verts": 96,
+    "n_hull_faces": 188
+  },
+  "VA4__AL_R": {
+    "glomerulus": "VA4",
+    "side": "R",
+    "centroid_nm": [
+      584920.2246349682,
+      279263.2616997379,
+      33307.54024709846
+    ],
+    "volume_um3": 3063.296,
+    "surface_um2": 1140.031,
+    "n_synapses": 2812,
+    "n_hull_verts": 76,
+    "n_hull_faces": 148
+  },
+  "VA5__AL_L": {
+    "glomerulus": "VA5",
+    "side": "L",
+    "centroid_nm": [
+      447662.7032967033,
+      264062.1934065934,
+      40227.443223443224
+    ],
+    "volume_um3": 2771.874,
+    "surface_um2": 1008.788,
+    "n_synapses": 2874,
+    "n_hull_verts": 99,
+    "n_hull_faces": 194
+  },
+  "VA5__AL_R": {
+    "glomerulus": "VA5",
+    "side": "R",
+    "centroid_nm": [
+      604478.2906350915,
+      279803.87728740583,
+      26779.074273412272
+    ],
+    "volume_um3": 2022.82,
+    "surface_um2": 835.181,
+    "n_synapses": 1956,
+    "n_hull_verts": 92,
+    "n_hull_faces": 180
+  },
+  "VA6__AL_L": {
+    "glomerulus": "VA6",
+    "side": "L",
+    "centroid_nm": [
+      462795.42326490715,
+      238395.00814597588,
+      31254.40860215054
+    ],
+    "volume_um3": 6657.869,
+    "surface_um2": 1776.558,
+    "n_synapses": 6462,
+    "n_hull_verts": 142,
+    "n_hull_faces": 280
+  },
+  "VA6__AL_R": {
+    "glomerulus": "VA6",
+    "side": "R",
+    "centroid_nm": [
+      587299.9153699154,
+      247478.91782691784,
+      14878.514878514878
+    ],
+    "volume_um3": 5776.345,
+    "surface_um2": 1618.814,
+    "n_synapses": 7712,
+    "n_hull_verts": 131,
+    "n_hull_faces": 258
+  },
+  "VA7l__AL_L": {
+    "glomerulus": "VA7l",
+    "side": "L",
+    "centroid_nm": [
+      457745.9120777418,
+      257818.95233688108,
+      32613.604812586764
+    ],
+    "volume_um3": 2608.492,
+    "surface_um2": 1024.964,
+    "n_synapses": 2275,
+    "n_hull_verts": 66,
+    "n_hull_faces": 128
+  },
+  "VA7l__AL_R": {
+    "glomerulus": "VA7l",
+    "side": "R",
+    "centroid_nm": [
+      594836.3564711151,
+      266830.41648007167,
+      16756.865203761754
+    ],
+    "volume_um3": 3098.061,
+    "surface_um2": 1186.812,
+    "n_synapses": 2351,
+    "n_hull_verts": 77,
+    "n_hull_faces": 150
+  },
+  "VA7m__AL_L": {
+    "glomerulus": "VA7m",
+    "side": "L",
+    "centroid_nm": [
+      470581.265,
+      256552.89833333335,
+      28630.85
+    ],
+    "volume_um3": 2225.823,
+    "surface_um2": 878.143,
+    "n_synapses": 2527,
+    "n_hull_verts": 97,
+    "n_hull_faces": 190
+  },
+  "VA7m__AL_R": {
+    "glomerulus": "VA7m",
+    "side": "R",
+    "centroid_nm": [
+      586245.0546671625,
+      266227.27259204164,
+      12863.05689847527
+    ],
+    "volume_um3": 2562.701,
+    "surface_um2": 954.592,
+    "n_synapses": 2831,
+    "n_hull_verts": 91,
+    "n_hull_faces": 178
+  },
+  "VC1__AL_L": {
+    "glomerulus": "VC1",
+    "side": "L",
+    "centroid_nm": [
+      469230.50974456005,
+      249491.11296121098,
+      53108.76821192053
+    ],
+    "volume_um3": 4755.059,
+    "surface_um2": 1474.685,
+    "n_synapses": 5564,
+    "n_hull_verts": 112,
+    "n_hull_faces": 220
+  },
+  "VC1__AL_R": {
+    "glomerulus": "VC1",
+    "side": "R",
+    "centroid_nm": [
+      583962.5995807127,
+      259648.38784067085,
+      37603.8714185884
+    ],
+    "volume_um3": 3979.775,
+    "surface_um2": 1269.847,
+    "n_synapses": 6026,
+    "n_hull_verts": 123,
+    "n_hull_faces": 242
+  },
+  "VC2__AL_L": {
+    "glomerulus": "VC2",
+    "side": "L",
+    "centroid_nm": [
+      470146.9944341373,
+      254599.1586270872,
+      41824.30426716141
+    ],
+    "volume_um3": 2684.637,
+    "surface_um2": 979.375,
+    "n_synapses": 4539,
+    "n_hull_verts": 85,
+    "n_hull_faces": 166
+  },
+  "VC2__AL_R": {
+    "glomerulus": "VC2",
+    "side": "R",
+    "centroid_nm": [
+      586483.0254691689,
+      266865.4343163539,
+      29188.37801608579
+    ],
+    "volume_um3": 3086.142,
+    "surface_um2": 1106.922,
+    "n_synapses": 3142,
+    "n_hull_verts": 98,
+    "n_hull_faces": 192
+  },
+  "VC3l__AL_L": {
+    "glomerulus": "VC3l",
+    "side": "L",
+    "centroid_nm": [
+      485805.75120344566,
+      257687.15834811248,
+      55488.96883709146
+    ],
+    "volume_um3": 5898.156,
+    "surface_um2": 1803.153,
+    "n_synapses": 8310,
+    "n_hull_verts": 85,
+    "n_hull_faces": 166
+  },
+  "VC3l__AL_R": {
+    "glomerulus": "VC3l",
+    "side": "R",
+    "centroid_nm": [
+      566652.6949957384,
+      265835.3795202727,
+      40850.7390722026
+    ],
+    "volume_um3": 6623.2,
+    "surface_um2": 1950.68,
+    "n_synapses": 8646,
+    "n_hull_verts": 78,
+    "n_hull_faces": 152
+  },
+  "VC3m__AL_L": {
+    "glomerulus": "VC3m",
+    "side": "L",
+    "centroid_nm": [
+      503748.2357207616,
+      256142.10093683892,
+      63585.343003928676
+    ],
+    "volume_um3": 4388.548,
+    "surface_um2": 1408.811,
+    "n_synapses": 6967,
+    "n_hull_verts": 113,
+    "n_hull_faces": 222
+  },
+  "VC3m__AL_R": {
+    "glomerulus": "VC3m",
+    "side": "R",
+    "centroid_nm": [
+      551373.1599383667,
+      263917.73066255776,
+      52630.040061633284
+    ],
+    "volume_um3": 3395.243,
+    "surface_um2": 1217.508,
+    "n_synapses": 3416,
+    "n_hull_verts": 94,
+    "n_hull_faces": 184
+  },
+  "VC4__AL_L": {
+    "glomerulus": "VC4",
+    "side": "L",
+    "centroid_nm": [
+      488731.5244803298,
+      249457.2375880433,
+      45957.75983507988
+    ],
+    "volume_um3": 3484.038,
+    "surface_um2": 1159.528,
+    "n_synapses": 6128,
+    "n_hull_verts": 114,
+    "n_hull_faces": 224
+  },
+  "VC4__AL_R": {
+    "glomerulus": "VC4",
+    "side": "R",
+    "centroid_nm": [
+      564901.6040286245,
+      258508.97641134376,
+      31612.95520805725
+    ],
+    "volume_um3": 3229.427,
+    "surface_um2": 1119.852,
+    "n_synapses": 3972,
+    "n_hull_verts": 87,
+    "n_hull_faces": 170
+  },
+  "VC5__AL_L": {
+    "glomerulus": "VC5",
+    "side": "L",
+    "centroid_nm": [
+      497412.41850340134,
+      259789.50585034012,
+      70793.6544217687
+    ],
+    "volume_um3": 14155.627,
+    "surface_um2": 3163.407,
+    "n_synapses": 7737,
+    "n_hull_verts": 118,
+    "n_hull_faces": 232
+  },
+  "VC5__AL_R": {
+    "glomerulus": "VC5",
+    "side": "R",
+    "centroid_nm": [
+      557675.3990692263,
+      267425.56602675974,
+      58882.05933682373
+    ],
+    "volume_um3": 11487.531,
+    "surface_um2": 2772.375,
+    "n_synapses": 7238,
+    "n_hull_verts": 109,
+    "n_hull_faces": 214
+  },
+  "VL1__AL_L": {
+    "glomerulus": "VL1",
+    "side": "L",
+    "centroid_nm": [
+      443285.6833057851,
+      265235.1444628099,
+      57946.75041322314
+    ],
+    "volume_um3": 5960.887,
+    "surface_um2": 1672.476,
+    "n_synapses": 3185,
+    "n_hull_verts": 121,
+    "n_hull_faces": 238
+  },
+  "VL1__AL_R": {
+    "glomerulus": "VL1",
+    "side": "R",
+    "centroid_nm": [
+      608239.1812933026,
+      278296.188221709,
+      44047.85219399538
+    ],
+    "volume_um3": 6729.697,
+    "surface_um2": 1801.454,
+    "n_synapses": 3647,
+    "n_hull_verts": 117,
+    "n_hull_faces": 230
+  },
+  "VL2a__AL_L": {
+    "glomerulus": "VL2a",
+    "side": "L",
+    "centroid_nm": [
+      426723.5193822394,
+      245219.80972972972,
+      58600.62393822394
+    ],
+    "volume_um3": 6315.191,
+    "surface_um2": 1726.044,
+    "n_synapses": 6816,
+    "n_hull_verts": 151,
+    "n_hull_faces": 298
+  },
+  "VL2a__AL_R": {
+    "glomerulus": "VL2a",
+    "side": "R",
+    "centroid_nm": [
+      624338.3325273788,
+      257631.00156450007,
+      42801.89446735884
+    ],
+    "volume_um3": 5883.968,
+    "surface_um2": 1633.484,
+    "n_synapses": 7402,
+    "n_hull_verts": 171,
+    "n_hull_faces": 338
+  },
+  "VL2p__AL_L": {
+    "glomerulus": "VL2p",
+    "side": "L",
+    "centroid_nm": [
+      428130.62090334884,
+      251110.37254200928,
+      70591.00941484925
+    ],
+    "volume_um3": 7016.432,
+    "surface_um2": 1867.896,
+    "n_synapses": 8833,
+    "n_hull_verts": 164,
+    "n_hull_faces": 324
+  },
+  "VL2p__AL_R": {
+    "glomerulus": "VL2p",
+    "side": "R",
+    "centroid_nm": [
+      621350.1967253478,
+      265019.43616890314,
+      54030.722639418935
+    ],
+    "volume_um3": 8658.159,
+    "surface_um2": 2140.798,
+    "n_synapses": 8551,
+    "n_hull_verts": 149,
+    "n_hull_faces": 294
+  },
+  "VM1__AL_L": {
+    "glomerulus": "VM1",
+    "side": "L",
+    "centroid_nm": [
+      503451.15414837067,
+      267419.9029350589,
+      60812.88652646175
+    ],
+    "volume_um3": 3600.759,
+    "surface_um2": 1342.591,
+    "n_synapses": 4555,
+    "n_hull_verts": 101,
+    "n_hull_faces": 198
+  },
+  "VM1__AL_R": {
+    "glomerulus": "VM1",
+    "side": "R",
+    "centroid_nm": [
+      552192.776309349,
+      274499.0925110132,
+      49261.00832109643
+    ],
+    "volume_um3": 3448.082,
+    "surface_um2": 1240.588,
+    "n_synapses": 4301,
+    "n_hull_verts": 112,
+    "n_hull_faces": 220
+  },
+  "VM2__AL_L": {
+    "glomerulus": "VM2",
+    "side": "L",
+    "centroid_nm": [
+      502450.71186440677,
+      251672.3339610797,
+      36995.543000627746
+    ],
+    "volume_um3": 2212.844,
+    "surface_um2": 907.365,
+    "n_synapses": 3354,
+    "n_hull_verts": 119,
+    "n_hull_faces": 234
+  },
+  "VM2__AL_R": {
+    "glomerulus": "VM2",
+    "side": "R",
+    "centroid_nm": [
+      553837.497456765,
+      259947.38962360122,
+      20087.792472024415
+    ],
+    "volume_um3": 2044.897,
+    "surface_um2": 853.114,
+    "n_synapses": 2070,
+    "n_hull_verts": 85,
+    "n_hull_faces": 166
+  },
+  "VM3__AL_L": {
+    "glomerulus": "VM3",
+    "side": "L",
+    "centroid_nm": [
+      501847.8210927573,
+      258891.37382465057,
+      44681.504447268104
+    ],
+    "volume_um3": 3004.86,
+    "surface_um2": 1067.075,
+    "n_synapses": 4143,
+    "n_hull_verts": 121,
+    "n_hull_faces": 238
+  },
+  "VM3__AL_R": {
+    "glomerulus": "VM3",
+    "side": "R",
+    "centroid_nm": [
+      554655.7627811861,
+      269077.76850715745,
+      30741.62781186094
+    ],
+    "volume_um3": 2940.518,
+    "surface_um2": 1094.492,
+    "n_synapses": 2574,
+    "n_hull_verts": 105,
+    "n_hull_faces": 206
+  },
+  "VM4__AL_L": {
+    "glomerulus": "VM4",
+    "side": "L",
+    "centroid_nm": [
+      485787.3082077052,
+      270516.229480737,
+      54595.44388609715
+    ],
+    "volume_um3": 2156.742,
+    "surface_um2": 935.501,
+    "n_synapses": 5028,
+    "n_hull_verts": 132,
+    "n_hull_faces": 260
+  },
+  "VM4__AL_R": {
+    "glomerulus": "VM4",
+    "side": "R",
+    "centroid_nm": [
+      571700.0381760339,
+      280888.01187698834,
+      41163.80063626723
+    ],
+    "volume_um3": 2815.252,
+    "surface_um2": 1063.328,
+    "n_synapses": 4964,
+    "n_hull_verts": 131,
+    "n_hull_faces": 258
+  },
+  "VM5d__AL_L": {
+    "glomerulus": "VM5d",
+    "side": "L",
+    "centroid_nm": [
+      492119.077462888,
+      239081.14493927127,
+      33483.5951417004
+    ],
+    "volume_um3": 5505.361,
+    "surface_um2": 1622.37,
+    "n_synapses": 7800,
+    "n_hull_verts": 115,
+    "n_hull_faces": 226
+  },
+  "VM5d__AL_R": {
+    "glomerulus": "VM5d",
+    "side": "R",
+    "centroid_nm": [
+      560102.7834101382,
+      247019.10394265232,
+      23601.88940092166
+    ],
+    "volume_um3": 5143.969,
+    "surface_um2": 1519.324,
+    "n_synapses": 8224,
+    "n_hull_verts": 140,
+    "n_hull_faces": 276
+  },
+  "VM5v__AL_L": {
+    "glomerulus": "VM5v",
+    "side": "L",
+    "centroid_nm": [
+      477362.3559247923,
+      245446.8587669436,
+      25770.170529077393
+    ],
+    "volume_um3": 3413.645,
+    "surface_um2": 1184.331,
+    "n_synapses": 4815,
+    "n_hull_verts": 108,
+    "n_hull_faces": 212
+  },
+  "VM5v__AL_R": {
+    "glomerulus": "VM5v",
+    "side": "R",
+    "centroid_nm": [
+      572806.5299264963,
+      254164.41862093104,
+      12736.695834791739
+    ],
+    "volume_um3": 3198.753,
+    "surface_um2": 1156.319,
+    "n_synapses": 6015,
+    "n_hull_verts": 112,
+    "n_hull_faces": 220
+  },
+  "VM7d__AL_L": {
+    "glomerulus": "VM7d",
+    "side": "L",
+    "centroid_nm": [
+      504299.8132269857,
+      239344.71385842471,
+      52837.18843469591
+    ],
+    "volume_um3": 4707.755,
+    "surface_um2": 1466.227,
+    "n_synapses": 6335,
+    "n_hull_verts": 90,
+    "n_hull_faces": 176
+  },
+  "VM7d__AL_R": {
+    "glomerulus": "VM7d",
+    "side": "R",
+    "centroid_nm": [
+      549369.2367632368,
+      248597.7947052947,
+      43768.781218781216
+    ],
+    "volume_um3": 5018.557,
+    "surface_um2": 1469.528,
+    "n_synapses": 8430,
+    "n_hull_verts": 151,
+    "n_hull_faces": 298
+  },
+  "VM7v__AL_L": {
+    "glomerulus": "VM7v",
+    "side": "L",
+    "centroid_nm": [
+      493667.0485260771,
+      236246.4045351474,
+      46450.485260770976
+    ],
+    "volume_um3": 3483.518,
+    "surface_um2": 1207.168,
+    "n_synapses": 4643,
+    "n_hull_verts": 84,
+    "n_hull_faces": 164
+  },
+  "VM7v__AL_R": {
+    "glomerulus": "VM7v",
+    "side": "R",
+    "centroid_nm": [
+      558075.6470293306,
+      247196.46427676108,
+      37352.76009024818
+    ],
+    "volume_um3": 3145.363,
+    "surface_um2": 1162.289,
+    "n_synapses": 4199,
+    "n_hull_verts": 73,
+    "n_hull_faces": 142
+  }
+}

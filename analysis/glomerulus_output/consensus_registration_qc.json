@@ -1,0 +1,27 @@
+{
+  "within_dataset": [
+    {
+      "dataset": "MCNS",
+      "n_shared": 53,
+      "n_gloms": 53,
+      "midline_x_nm": 360480.0,
+      "rmse_pre_nm": 57430.3,
+      "rmse_post_nm": 4299.7
+    },
+    {
+      "dataset": "FAFB",
+      "n_shared": 51,
+      "n_gloms": 51,
+      "midline_x_nm": 520000.0,
+      "rmse_pre_nm": 22874.5,
+      "rmse_post_nm": 3643.2
+    }
+  ],
+  "cross_dataset": {
+    "step": "MCNS\u2192FAFB",
+    "n_shared": 49,
+    "rmse_pre_nm": 271295.1,
+    "rmse_post_nm": 4051.4
+  },
+  "voxel_um": 2.0
+}
