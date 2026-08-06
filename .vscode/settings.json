@@ -1,3 +1,4 @@
 {
-    "python.analysis.typeCheckingMode": "basic"
+    "python.analysis.typeCheckingMode": "basic",
+    "reasonix.model": "deepseek-pro/deepseek-v4-pro"
 }
