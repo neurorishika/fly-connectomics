@@ -164,6 +164,9 @@ temp/
 # directorypaths
 directory.path
 
+# Protected files
+!data/type_harmonization.csv
+
 # Mac OS
 **/.DS_Store
 
@@ -171,3 +174,6 @@ directory.path
 **/*.pkl
 **/*.pdf
 **/*.csv
+**/*.parquet
+# But NOT tracked CSV in data/type_harmonization.csv
+!data/type_harmonization.csv

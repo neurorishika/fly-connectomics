@@ -1,0 +1,68 @@
+# ORN Lateralization Decay Analysis — Master Configuration
+# ==========================================================
+# All analysis parameters live here. The notebook loads this at the top
+# and prints it.  Never hardcode a parameter in src/ or the notebook.
+
+# --- Paths ---------------------------------------------------------------
+paths:
+  data_dir: "data"
+  cache_dir: "cache"
+  results_dir: "results"
+  tables_dir: "results/tables"
+  figures_dir: "results/figures"
+  harmonize_csv: "data/type_harmonization.csv"   # cross-dataset type mapping (see §3.3)
+
+# --- Graph construction ---------------------------------------------------
+graph:
+  syn_threshold: 5               # minimum synapses for an edge (swept: [1,3,5,10])
+  normalization: "input_fraction" # one of: input_fraction, raw, log_syn, sqrt_syn
+  signed: false                  # all-excitatory (primary).  Set true for secondary NT-aware run
+  ablate_seed_feedback: true     # zero input rows of seed neurons for clean hop interpretation
+  dtype: "float32"
+  sparse_format: "csr"
+
+# --- Propagation ----------------------------------------------------------
+propagation:
+  n_hops: 10                     # number of synaptic steps
+  alpha_sweep: [0.2, 0.3, 0.5, 0.7, 0.9]  # teleportation parameter; must satisfy α·ρ(W) < 1
+  default_alpha: 0.5             # used for primary figures and reporting
+  batch_seeds: true              # batch all seeds into one (n_neurons × n_seeds) matmul
+
+# --- Seed definition ------------------------------------------------------
+seeds:
+  min_orns_per_side: 3           # exclude glomeruli with fewer ORNs per side
+  max_side_imbalance_ratio: 2.0  # flag glomeruli with L/R count ratio > this
+  random_null_seeds: 100         # number of size-matched random sensory seeds per ORN seed
+
+# --- Lateralization -------------------------------------------------------
+lateralization:
+  noise_floor_percentile: 95     # percentile for L/R reconstruction noise floor
+  li_floor_fraction: 0.01        # mask LI when I_ipsi+I_contra < floor_fraction * max_influence
+  crossover_threshold: 0.1       # |LI| threshold for crossover hop (swept: [0.05, 0.1, 0.2])
+  bootstrap_draws: 1000          # for λ CI estimation
+  min_r_squared: 0.7             # flag decay fits below this R²
+
+# --- Null models ----------------------------------------------------------
+nulls:
+  n_rewirings: 100               # degree-preserving rewiring draws
+  preserve_block_structure: true # keep L→L/L→R/R→L/R→R block densities
+
+# --- Robustness sweep -----------------------------------------------------
+robustness:
+  syn_threshold_sweep: [1, 3, 5, 10]
+  normalization_variants: ["input_fraction", "raw", "sqrt_syn"]
+  alpha_sweep: [0.2, 0.3, 0.5, 0.7, 0.9]
+
+# --- Plotting -------------------------------------------------------------
+plotting:
+  dpi: 300
+  formats: ["svg", "png"]
+  palette: "colorblind"          # seaborn colorblind-safe palette
+  dataset_colors:
+    flywire: "#0173B2"
+    mcns: "#DE8F05"
+    banc: "#029E73"
+  figure_size_default: [8, 5]
+
+# --- Reproducibility ------------------------------------------------------
+seed: 42
